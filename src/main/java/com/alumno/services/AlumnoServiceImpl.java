@@ -2,6 +2,7 @@ package com.alumno.services;
 
 import com.alumno.entities.Alumno;
 import com.alumno.repository.AlumnoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.Table;
 import javax.transaction.Transactional;
@@ -10,7 +11,8 @@ import java.util.Optional;
 
 public class AlumnoServiceImpl implements AlumnoService<Alumno>{
 
-    protected AlumnoRepository<Alumno,Long> alumnoRepository;
+    @Autowired
+    private AlumnoRepository alumnoRepository;
     @Override
     @Transactional
     public List<Alumno> findAll() throws Exception {
