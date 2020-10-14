@@ -17,6 +17,9 @@ import java.util.Date;
 @Setter
 public class Alumno {
     //German
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     @Column(name="nombre")
     private String nombre;
     @Column(name="apellido")
